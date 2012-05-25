@@ -41,7 +41,7 @@ module Rendition
         end
         val
         #elsif view_context.respond_to? method
-        #  controller.view_view_context.send method, *args, &block
+        #  view_context.send method, *args, &block
       else
         super
       end

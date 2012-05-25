@@ -48,10 +48,10 @@ module Rendition
 
     console do
       require 'action_controller/test_case'
-      ApplicationController.new.set_current_view_context
-      Rendition::ViewContext.current.controller.request ||= ActionController::TestRequest.new
-      Rendition::ViewContext.current.request            ||= Rendition::ViewContext.current.controller.request
-      Rendition::ViewContext.current.params             ||= {}
+      #ApplicationController.new.set_current_view_context
+      #Rendition::ViewContext.current.controller.request ||= ActionController::TestRequest.new
+      #Rendition::ViewContext.current.request            ||= Rendition::ViewContext.current.controller.request
+      #Rendition::ViewContext.current.params             ||= {}
     end
   end
 end
