@@ -33,7 +33,7 @@ module Rendition
           end
         end
 
-        define_method "#{name}=".to_sym do |value|
+        define_method "#{name}=" do |value|
           @_resources ||= {}
           @_resources[name] = value
         end
