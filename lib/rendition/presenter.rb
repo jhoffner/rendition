@@ -59,6 +59,16 @@ module Rendition
 
     class << self
 
+      def method_missing(method, *args, &block)
+        # since presenters should be attached as sub-constants to the class that they typically decorate we can just
+        # pass through to the parent constant class
+        if parent
+          parent.send method, *args, &block
+        else
+          super
+        end
+      end
+
       def presenter(view_context, types = nil, model = nil, attributes = {}, &block)
 
         types, model, attributes = _process_args(types, model, attributes, &block)
